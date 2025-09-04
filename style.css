@@ -1,0 +1,552 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding-top: 70px; /* نفس ارتفاع الـ header تقريبًا */
+
+}
+
+/* Navbar */
+
+
+header {
+  background: #222;
+  color: #fff;
+  padding: 15px 0;
+
+
+  background: #222;
+  color: #fff;
+  padding: 15px 0;
+  position: fixed; /* يثبت الناف */
+  top: 0;           /* يثبتها في أعلى الصفحة */
+  left: 0;
+  width: 100%;
+  z-index: 1000;   /* يضمن أنها فوق باقي المحتوى */
+  transition: box-shadow 0.3s;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between; /* اللوجو على الشمال، الروابط على اليمين */
+  align-items: center;
+  padding: 0 20px;
+}
+
+
+header.scrolled {
+  background: #222;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+
+header.shrink .logo {
+  transform: scale(0.8); /* تصغير الشعار شوي */
+  transition: transform 0.3s ease;
+}
+
+/* تأثير الـ scroll على Navbar */
+header.shrink {
+  padding: 8px 0; /* يقل ارتفاع الهيدر */
+  transition: padding 0.3s;
+    background: rgba(34,34,34,0.9); /* شوية شفافية */
+  transition: padding 0.3s, background 0.3s;
+}
+
+header.shrink .logo {
+  font-size: 20px; /* يصغر حجم اللوجو */
+  transition: font-size 0.3s;
+}
+
+
+
+
+
+
+.container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;       /* أكبر شوية */
+  font-weight: 700;      /* ثقيل */
+  color: #ff9800;        /* لون يبرز */
+  letter-spacing: 1px;   /* فراغ بين الحروف */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.nav-links li a {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  background: #ff9800;
+  color: #fff;
+}
+
+.nav-links a:hover {
+  color: #ff9800;
+}
+
+/* Hero Section */
+.hero {
+ background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80')
+              no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+/* Hero Animations */
+.hero-content h2, .hero-content p, .btn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero-content.show h2,
+.hero-content.show p,
+.hero-content.show .btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.btn {
+  background: #ff9800;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #e68900;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+/* About Section */
+.about {
+  padding: 60px 0;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 18px;
+  color: #555;
+}
+
+.about-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 60px 0;
+  background: #f9f9f9;
+}
+
+.about-img img {
+  width: 420px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.about-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  margin-bottom: 18px;
+  color: #ff9800;
+}
+
+.about-text p {
+  font-size: 19px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Services Section */
+.services {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {  
+    background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s; /* مهم للتحريك */
+}
+
+
+.card:hover {
+  transform: translateY(-5px) scale(1.03); /* يطلع شوية ويكبر */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);  /* shadow أقوى */
+}
+
+
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Blog Section */
+.blog {
+  padding: 60px 0;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.blog h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.blog-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  margin: auto;
+  text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s; /* مهم للتحريك */
+}
+
+
+.blog-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-card h3 {
+  font-size: 20px;
+  margin: 15px;
+}
+
+.blog-card p {
+  font-size: 16px;
+  color: #555;
+  margin: 0 15px 15px;
+}
+
+.blog-card a {
+  display: inline-block;
+  margin: 0 15px 15px;
+  color: #ff9800;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.blog-card a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Section */
+.contact {
+  padding: 70px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #fff 70%, #fff7e6 100%);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  margin: 50px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  left: -80px;
+  top: -80px;
+  width: 180px;
+  height: 180px;
+  background: #ff98001a;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.contact h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+  color: #ff9800;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.contact .contact-desc {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #fff;
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  position: relative;
+  z-index: 1;
+}
+
+.contact input, .contact textarea {
+  padding: 20px 20px 20px 52px;
+  border: 1.5px solid #eee;
+  border-radius: 8px;
+  font-size: 20px;
+  background: #fafafa;
+  transition: border 0.3s;
+  position: relative;
+}
+
+.contact input:focus, .contact textarea:focus {
+  border-color: #ff9800;
+  outline: none;
+  background: #fff;
+}
+
+.contact textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.contact .input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #ff9800;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.contact .input-group {
+  position: relative;
+}
+
+.contact button {
+  background: linear-gradient(90deg, #ff9800 80%, #ffc107 100%);
+  color: #fff;
+  border: none;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px #ff980033;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.contact button:hover {
+  background: #e68900;
+  box-shadow: 0 4px 16px #ff980044;
+}
+
+/* استجابة للموبايل */
+@media (max-width: 600px) {
+  .contact form {
+    padding: 16px 6px;
+  }
+  .contact h2 {
+    font-size: 28px;
+  }
+  .contact .contact-desc {
+    font-size: 15px;
+  }
+}
+
+/* الزرار (☰) الافتراضي */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+
+
+
+/* على الشاشات الصغيرة (الموبايل) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: relative;
+  }
+}
+/* Portfolio Section */
+.portfolio {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 20px; /* المسافة بين الصور */
+}
+
+.portfolio-item {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover; /* يظبط الصورة جوا الكادر */
+  display: block;
+}
+
+.portfolio-item h3 {
+  font-size: 18px;
+  padding: 15px;
+  color: #333;
+}
+
+/* أيقونات Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
